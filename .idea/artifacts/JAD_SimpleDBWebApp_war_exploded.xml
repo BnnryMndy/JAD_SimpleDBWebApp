@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JAD_SimpleDBWebApp:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/JAD_SimpleDBWebApp_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="JAD_SimpleDBWebApp/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JAD_SimpleDBWebApp" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
