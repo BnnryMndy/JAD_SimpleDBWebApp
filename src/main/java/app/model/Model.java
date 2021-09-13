@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Model {
-    private Model instance;
+    private static Model instance;
 
     private List<User> model;
 
@@ -15,7 +15,7 @@ public class Model {
         model = new ArrayList<>();
     }
 
-    public Model getInstance() {
+    public static Model getInstance() {
         return instance;
     }
 
