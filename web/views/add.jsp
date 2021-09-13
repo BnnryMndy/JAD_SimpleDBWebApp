@@ -25,10 +25,18 @@
                     "   <h5>User '" + request.getAttribute("userName") + "' added!</h5>\n" +
                     "</div>");
         }
+
+        if(request.getAttribute("exception") != null){
+            out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n" +
+                    "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
+                    "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
+                    "   <h5>Error: '" + request.getAttribute("exception") + "'</h5>\n" +
+                    "</div>");
+        }
     %>
     <div class="w3-card-4">
         <div class="w3-container w3-center w3-green">
-            <h2>Add user</h2>
+            <h2>Register</h2>
         </div>
         <form method="post" class="w3-selection w3-light-grey w3-padding">
             <label>Name:

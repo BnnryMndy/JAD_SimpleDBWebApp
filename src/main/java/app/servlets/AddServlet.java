@@ -25,10 +25,17 @@ public class AddServlet extends HttpServlet {
         String password = req.getParameter("password");
         User user = new User(name, password);
         Model model = Model.getInstance();
-        model.addUser(user);
+        if(model.ValidateUser(user) == 0){
+            model.addUser(user);
+            req.setAttribute("userName", name);
+            doGet(req, resp);
+        }
+        else{
+            req.setAttribute("exception", "this login already taken");
+            doGet(req, resp);
+        }
 
-        req.setAttribute("userName", name);
-        doGet(req, resp);
+
         //        super.doPost(req, resp);
     }
 }
