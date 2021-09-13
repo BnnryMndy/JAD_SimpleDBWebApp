@@ -1,18 +1,20 @@
 package app.model;
 
 import app.entities.User;
+import app.services.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Model {
-    private static Model instance;
+    private UserService userService ;
+    private static Model instance = new Model();
 
-    private List<User> model;
+//    private List<User> model;
 
     private Model(){
-        model = new ArrayList<>();
+        userService = new UserService();
     }
 
     public static Model getInstance() {
@@ -20,10 +22,10 @@ public class Model {
     }
 
     public void addUser(User user){
-        model.add(user);
+        userService.saveUser(user);
     }
 
     public List<String> getList(){
-        return model.stream().map(User::getName).collect(Collectors.toList());
+        return userService.findAllUsers().stream().map(User::getName).collect(Collectors.toList());
     }
 }

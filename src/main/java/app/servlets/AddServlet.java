@@ -26,6 +26,9 @@ public class AddServlet extends HttpServlet {
         User user = new User(name, password);
         Model model = Model.getInstance();
         model.addUser(user);
+
+        req.setAttribute("userName", name);
+        doGet(req, resp);
         //        super.doPost(req, resp);
     }
 }
